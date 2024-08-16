@@ -73,8 +73,8 @@ equals.addEventListener(`click`, () => {
     });
     console.log(index);
 
-    firstNum = displayArr.slice(0, index).join();
-    secondNum = displayArr.slice(index + 1).join();
+    firstNum = displayArr.slice(0, index).join(``);
+    secondNum = displayArr.slice(index + 1).join(``);
     console.log(firstNum);
     console.log(secondNum);
     operator = displayArr.slice(index, index + 1).join();
