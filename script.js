@@ -9,3 +9,7 @@ let subtract = (a, b) => {
 let multiply = (a, b) => {
     return a * b;
 }
+
+let divide = (a, b) => {
+    return a / b;
+}
