@@ -64,9 +64,9 @@ equals.addEventListener(`click`, () => {
     let displayArr = displayText.split(``);
     console.log(displayArr);
 
-    let index = displayArr.findIndex((item) => {
+    let index = displayArr.findIndex((item, ind) => {
         if (item == `+`
-            || item == `-`
+            || item == `-` && ind !== 0
             || item == `*`
             || item == `/`
         ) return item;
