@@ -57,6 +57,7 @@ inputs.addEventListener(`click`, (event) => {
 
 clearButton.addEventListener(`click`, () => {
     display.value = ``;
+    displayText = ``;
 })
 
 equals.addEventListener(`click`, () => {
