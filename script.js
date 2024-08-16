@@ -40,6 +40,7 @@ const symbols = [`+`, `-`, `*`, `/`];
 
 const display = document.querySelector(`#display`);
 const inputs = document.querySelector(`.inputElements`);
+const clearButton = document.querySelector(`#clear`);
 
 let populate = (symbol) => {
     display.value += symbol;
@@ -47,4 +48,8 @@ let populate = (symbol) => {
 
 inputs.addEventListener(`click`, (event) => {
     populate(event.target.textContent);
+})
+
+clearButton.addEventListener(`click`, () => {
+    display.value = ``;
 })
