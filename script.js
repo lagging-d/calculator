@@ -23,13 +23,13 @@ let secondNum;
 
 let operate = (firstNum, secondNum, operator) => {
     if (operator == `+`) {
-        return add(parseInt(firstNum), parseInt(secondNum))
+        return result = add(parseInt(firstNum), parseInt(secondNum))
     } else if (operator == `-`) {
-        return subtract(firstNum, secondNum) 
+        return result = subtract(firstNum, secondNum) 
     } else if (operator == `*`) {
-        return multiply(firstNum, secondNum)
+        return result = multiply(firstNum, secondNum)
     } else if (operator == `/`) {
-        return divide(firstNum, secondNum)
+        return result = divide(firstNum, secondNum)
     } else return `Operator doesn't exist`
 }
 
@@ -80,5 +80,6 @@ equals.addEventListener(`click`, () => {
     operator = displayArr.slice(index, index + 1).join();
     console.log(operator);
 
-    console.log(operate(firstNum, secondNum, operator));
+    operate(firstNum, secondNum, operator);
+    display.value = result;
 })
