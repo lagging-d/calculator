@@ -39,10 +39,12 @@ let displayVal;
 const symbols = [`+`, `-`, `*`, `/`];
 
 const display = document.querySelector(`#display`);
-const digits = document.querySelector(`.digits`);
+const inputs = document.querySelector(`.inputElements`);
 
 let populate = (symbol) => {
     display.value += symbol;
 }
 
-
+inputs.addEventListener(`click`, (event) => {
+    populate(event.target.textContent);
+})
