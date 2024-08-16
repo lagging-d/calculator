@@ -28,9 +28,11 @@ let operate = (firstNum, secondNum, operator) => {
         return result = subtract(firstNum, secondNum) 
     } else if (operator == `*`) {
         return result = multiply(firstNum, secondNum)
+    } else if (operator = `/` && secondNum == `0`) {
+        return result = `ZERO?` 
     } else if (operator == `/`) {
         return result = divide(firstNum, secondNum)
-    } else return `Operator doesn't exist`
+    } else return result = `Operator doesn't exist`
 }
 
 // Calculation core -end-
