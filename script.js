@@ -36,7 +36,11 @@ let operate = (firstNum, secondNum, operator) => {
 // Calculation core -end-
 
 let displayVal; 
+const symbols = [`+`, `-`, `*`, `/`];
 
 const display = document.querySelector(`#display`);
 const digits = document.querySelectorAll(`.digits button`);
 
+let populate = (symbol) => {
+    display.value += symbol;
+}
