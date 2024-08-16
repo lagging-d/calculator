@@ -17,3 +17,16 @@ let divide = (a, b) => {
 let firstNum;
 let operator;
 let secondNum; 
+
+let operate = (firstNum, secondNum, operator) => {
+    if (operator == `+`) {
+        return add(firstNum, secondNum)
+    } else if (operator == `-`) {
+        return subtract(firstNum, secondNum) 
+    } else if (operator == `*`) {
+        return multiply(firstNum, secondNum)
+    } else if (operator == `/`) {
+        return divide(firstNum, secondNum)
+    } else return `Operator doesn't exist`
+}
+
