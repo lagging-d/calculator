@@ -1,3 +1,6 @@
+
+// Calculation core
+
 let add = (a, b) => {
     return a + b;
 }
@@ -29,4 +32,11 @@ let operate = (firstNum, secondNum, operator) => {
         return divide(firstNum, secondNum)
     } else return `Operator doesn't exist`
 }
+
+// Calculation core -end-
+
+let displayVal; 
+
+const display = document.querySelector(`#display`);
+const digits = document.querySelectorAll(`.digits button`);
 
