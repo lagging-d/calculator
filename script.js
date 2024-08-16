@@ -39,8 +39,10 @@ let displayVal;
 const symbols = [`+`, `-`, `*`, `/`];
 
 const display = document.querySelector(`#display`);
-const digits = document.querySelectorAll(`.digits button`);
+const digits = document.querySelector(`.digits`);
 
 let populate = (symbol) => {
     display.value += symbol;
 }
+
+
