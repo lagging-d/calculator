@@ -1,5 +1,5 @@
 
-// Calculation core
+// Calculation core -start-
 
 let add = (a, b) => {
     return a + b;
@@ -35,15 +35,20 @@ let operate = (firstNum, secondNum, operator) => {
 
 // Calculation core -end-
 
+// Changing display -start-
+
 let displayVal; 
+let displayText;
 const symbols = [`+`, `-`, `*`, `/`];
 
 const display = document.querySelector(`#display`);
 const inputs = document.querySelector(`.inputElements`);
 const clearButton = document.querySelector(`#clear`);
+const equals = document.querySelector(`#equals`);
 
 let populate = (symbol) => {
     display.value += symbol;
+    displayText = display.value;
 }
 
 inputs.addEventListener(`click`, (event) => {
@@ -52,4 +57,25 @@ inputs.addEventListener(`click`, (event) => {
 
 clearButton.addEventListener(`click`, () => {
     display.value = ``;
+})
+
+equals.addEventListener(`click`, () => {
+    let displayArr = displayText.split(``);
+    console.log(displayArr);
+
+    let index = displayArr.findIndex((item) => {
+        if (item == `+`
+            || item == `-`
+            || item == `*`
+            || item == `/`
+        ) return item;
+    });
+    console.log(index);
+
+    firstNum = displayArr.slice(0, index).join();
+    secondNum = displayArr.slice(index + 1).join();
+    console.log(firstNum);
+    console.log(secondNum);
+    operator = displayArr.slice(index, index + 1).join();
+    console.log(operator);
 })
