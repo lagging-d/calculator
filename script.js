@@ -23,7 +23,7 @@ let secondNum;
 
 let operate = (firstNum, secondNum, operator) => {
     if (operator == `+`) {
-        return add(firstNum, secondNum)
+        return add(parseInt(firstNum), parseInt(secondNum))
     } else if (operator == `-`) {
         return subtract(firstNum, secondNum) 
     } else if (operator == `*`) {
@@ -79,4 +79,6 @@ equals.addEventListener(`click`, () => {
     console.log(secondNum);
     operator = displayArr.slice(index, index + 1).join();
     console.log(operator);
+
+    console.log(operate(firstNum, secondNum, operator));
 })
