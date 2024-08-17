@@ -57,16 +57,14 @@ let inputArray = [];
 let inputHistory = [];
 
 inputs.addEventListener(`click`, (event) => {
-    populate(event.target.textContent);
-    console.log(event.target.className);
-
-    
     inputHistory.push(event.target.className);
-    console.log(inputHistory);
-
     let isOperatorInput = inputHistory.map((elem, index) => index !== inputHistory.indexOf(elem) && elem == `oper`)
-                                    .filter(elem => elem == true)
     console.log(isOperatorInput);
+
+    if (isOperatorInput.includes(true)) {
+        event.stopImmediatePropagation();
+    } else populate(event.target.textContent);
+    
 })
 
 clearButton.addEventListener(`click`, () => {
@@ -74,8 +72,10 @@ clearButton.addEventListener(`click`, () => {
     displayText = ``;
 })
 
-equals.addEventListener(`click`, () => {
-    let displayArr = displayText.split(``);
+let displayArr;
+
+let calculation = () => {
+    displayArr = displayText.split(``);
     console.log(displayArr);
 
     let index = displayArr.findIndex((item, ind) => {
@@ -97,5 +97,7 @@ equals.addEventListener(`click`, () => {
     operate(firstNum, secondNum, operator);
     display.value = result;
     displayText = result;
-})
+}
+
+equals.addEventListener(`click`, calculation);
 
