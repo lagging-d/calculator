@@ -64,8 +64,9 @@ inputs.addEventListener(`click`, (event) => {
     inputHistory.push(event.target.className);
     console.log(inputHistory);
 
-    let isOperatorInput = inputHistory.map((elem, index) => index !== inputHistory.indexOf(elem) && elem == `oper`);
-    console.log(checkHistory);
+    let isOperatorInput = inputHistory.map((elem, index) => index !== inputHistory.indexOf(elem) && elem == `oper`)
+                                    .filter(elem => elem == true)
+    console.log(isOperatorInput);
 })
 
 clearButton.addEventListener(`click`, () => {
