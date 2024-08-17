@@ -28,10 +28,10 @@ let operate = (firstNum, secondNum, operator) => {
         return result = subtract(firstNum, secondNum) 
     } else if (operator == `*`) {
         return result = multiply(firstNum, secondNum)
+    } else if (operator = `/`) {
+        return result = divide(firstNum, secondNum) 
     } else if (operator = `/` && secondNum == `0`) {
-        return result = `ZERO?` 
-    } else if (operator == `/`) {
-        return result = divide(firstNum, secondNum)
+        return result = `ZERO?`
     } else return result = `Operator doesn't exist`
 }
 
