@@ -53,6 +53,8 @@ let populate = (symbol) => {
     displayText = display.value;
 }
 
+let inputArray = [];
+
 inputs.addEventListener(`click`, (event) => {
     populate(event.target.textContent);
 })
@@ -73,14 +75,14 @@ equals.addEventListener(`click`, () => {
             || item == `/`
         ) return item;
     });
-    console.log(index);
+    console.log(`Index: ${index}`);
 
     firstNum = displayArr.slice(0, index).join(``);
     secondNum = displayArr.slice(index + 1).join(``);
-    console.log(firstNum);
-    console.log(secondNum);
+    console.log(`FirstNum: ${firstNum}`);
+    console.log(`SecondNum: ${secondNum}`);
     operator = displayArr.slice(index, index + 1).join();
-    console.log(operator);
+    console.log(`Operator: ${operator}`);
 
     operate(firstNum, secondNum, operator);
     display.value = result;
