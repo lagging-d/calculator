@@ -63,6 +63,7 @@ inputs.addEventListener(`click`, (event) => {
 
     if (isOperatorInput.includes(true)) {
         event.stopImmediatePropagation();
+        calculation();
     } else populate(event.target.textContent);
     
 })
