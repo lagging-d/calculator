@@ -54,9 +54,15 @@ let populate = (symbol) => {
 }
 
 let inputArray = [];
+let inputHistory = [];
 
 inputs.addEventListener(`click`, (event) => {
     populate(event.target.textContent);
+    console.log(event.target.className);
+
+    
+    inputHistory.push(event.target.className);
+    console.log(inputHistory);
 })
 
 clearButton.addEventListener(`click`, () => {
@@ -86,4 +92,6 @@ equals.addEventListener(`click`, () => {
 
     operate(firstNum, secondNum, operator);
     display.value = result;
+    displayText = result;
 })
+
