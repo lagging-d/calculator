@@ -63,6 +63,9 @@ inputs.addEventListener(`click`, (event) => {
     
     inputHistory.push(event.target.className);
     console.log(inputHistory);
+
+    let checkHistory = inputHistory.map((elem, index) => index !== inputHistory.indexOf(elem) && elem == `oper`);
+    console.log(checkHistory);
 })
 
 clearButton.addEventListener(`click`, () => {
