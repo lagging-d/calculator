@@ -97,6 +97,8 @@ let calculation = () => {
     operate(firstNum, secondNum, operator);
     display.value = result;
     displayText = result;
+
+    inputHistory = [];
 }
 
 equals.addEventListener(`click`, calculation);
