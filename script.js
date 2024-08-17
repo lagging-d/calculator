@@ -55,6 +55,7 @@ let populate = (symbol) => {
 
 let inputArray = [];
 let inputHistory = [];
+let lastOperator;
 
 inputs.addEventListener(`click`, (event) => {
     inputHistory.push(event.target.className);
@@ -62,6 +63,7 @@ inputs.addEventListener(`click`, (event) => {
     console.log(isOperatorInput);
 
     if (isOperatorInput.includes(true)) {
+        lastOperator = event.target.textContent;
         event.stopImmediatePropagation();
         calculation();
     } else populate(event.target.textContent);
@@ -96,7 +98,7 @@ let calculation = () => {
     console.log(`Operator: ${operator}`);
 
     operate(firstNum, secondNum, operator);
-    display.value = result;
+    display.value = result + lastOperator;
     displayText = result;
 
     inputHistory = [];
