@@ -62,6 +62,7 @@ let checkSecondOperator;
 inputs.addEventListener(`click`, (event) => {
     inputHistory.push(event.target.className);
     if (inputHistory.includes(`dot`)) dotBtn.disabled = true;
+    if (inputHistory.includes(`oper`)) dotBtn.disabled = false;
     let isOperatorInput = inputHistory.map((elem, index) => index !== inputHistory.indexOf(elem) && elem == `oper`)
     console.log(isOperatorInput);
     console.log(inputHistory);
