@@ -119,5 +119,8 @@ let calculation = () => {
     console.log(`last: ${lastOperator}`);
 }
 
-equals.addEventListener(`click`, calculation);
+equals.addEventListener(`click`, () => {
+    lastOperator = ``;
+    calculation();
+});
 
