@@ -47,6 +47,7 @@ const display = document.querySelector(`#display`);
 const inputs = document.querySelector(`.inputElements`);
 const clearButton = document.querySelector(`#clear`);
 const equals = document.querySelector(`#equals`);
+const dotBtn = document.querySelector(`#dot`);
 
 let populate = (symbol) => {
     display.value += symbol;
@@ -120,7 +121,7 @@ let calculation = () => {
 }
 
 equals.addEventListener(`click`, () => {
-    lastOperator = ``;
-    calculation();
+        lastOperator = ``;
+        calculation();
 });
 
