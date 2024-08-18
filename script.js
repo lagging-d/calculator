@@ -74,6 +74,7 @@ clearButton.addEventListener(`click`, () => {
     display.value = ``;
     displayText = ``;
     inputHistory = [];
+    lastOperator = ``;
 })
 
 let displayArr;
@@ -99,10 +100,13 @@ let calculation = () => {
     console.log(`Operator: ${operator}`);
 
     operate(firstNum, secondNum, operator);
-    display.value = result + lastOperator;
+    display.value = result;
     displayText = result;
 
     inputHistory = [];
+
+    console.log(`displayText: ${displayText}`);
+    console.log(`inputhistory: ${inputHistory}`);
 }
 
 equals.addEventListener(`click`, calculation);
