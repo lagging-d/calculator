@@ -56,6 +56,7 @@ let populate = (symbol) => {
 let inputArray = [];
 let inputHistory = [];
 let lastOperator;
+let checkSecondOperator;
 
 inputs.addEventListener(`click`, (event) => {
     inputHistory.push(event.target.className);
@@ -104,12 +105,14 @@ let calculation = () => {
     if (lastOperator !== ``) {
         display.value = result + lastOperator;
         displayText = result + lastOperator;
+        inputHistory = [`oper`];
     } else { 
         display.value = result;
         displayText = result;
+        inputHistory = [];
     }
 
-    inputHistory = [];
+    
 
     console.log(`displayText: ${displayText}`);
     console.log(`inputhistory: ${inputHistory}`);
