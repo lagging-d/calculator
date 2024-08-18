@@ -47,7 +47,7 @@ const display = document.querySelector(`#display`);
 const inputs = document.querySelector(`.inputElements`);
 const clearButton = document.querySelector(`#clear`);
 const equals = document.querySelector(`#equals`);
-const dotBtn = document.querySelector(`#dot`);
+const dotBtn = document.querySelector(`.dot`);
 
 let populate = (symbol) => {
     display.value += symbol;
@@ -61,8 +61,10 @@ let checkSecondOperator;
 
 inputs.addEventListener(`click`, (event) => {
     inputHistory.push(event.target.className);
+    if (inputHistory.includes(`dot`)) dotBtn.disabled = true;
     let isOperatorInput = inputHistory.map((elem, index) => index !== inputHistory.indexOf(elem) && elem == `oper`)
     console.log(isOperatorInput);
+    console.log(inputHistory);
 
     if (isOperatorInput.includes(true)) {
         lastOperator = event.target.textContent;
@@ -113,7 +115,7 @@ let calculation = () => {
         inputHistory = [];
     }
 
-    
+    dotBtn.disabled = false
 
     console.log(`displayText: ${displayText}`);
     console.log(`inputhistory: ${inputHistory}`);
