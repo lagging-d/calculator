@@ -100,13 +100,20 @@ let calculation = () => {
     console.log(`Operator: ${operator}`);
 
     operate(firstNum, secondNum, operator);
-    display.value = result;
-    displayText = result;
+
+    if (lastOperator !== ``) {
+        display.value = result + lastOperator;
+        displayText = result + lastOperator;
+    } else { 
+        display.value = result;
+        displayText = result;
+    }
 
     inputHistory = [];
 
     console.log(`displayText: ${displayText}`);
     console.log(`inputhistory: ${inputHistory}`);
+    console.log(`last: ${lastOperator}`);
 }
 
 equals.addEventListener(`click`, calculation);
