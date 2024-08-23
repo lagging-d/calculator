@@ -23,7 +23,7 @@ let secondNum;
 
 let operate = (firstNum, secondNum, operator) => {
     if (operator == `+`) {
-        return result = add(parseInt(firstNum), parseInt(secondNum))
+        return result = add(parseFloat(firstNum), parseFloat(secondNum))
     } else if (operator == `-`) {
         return result = subtract(firstNum, secondNum) 
     } else if (operator == `*`) {
