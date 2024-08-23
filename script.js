@@ -48,6 +48,7 @@ const inputs = document.querySelector(`.inputElements`);
 const clearButton = document.querySelector(`#clear`);
 const equals = document.querySelector(`#equals`);
 const dotBtn = document.querySelector(`.dot`);
+const back = document.querySelector(`#back`);
 
 let populate = (symbol) => {
     display.value += symbol;
@@ -128,3 +129,16 @@ equals.addEventListener(`click`, () => {
         calculation();
 });
 
+back.addEventListener(`click`, () => {
+    inputHistory.pop();
+    displayText = displayText.slice(0, -1); 
+    display.value = displayText;
+})
+
+document.addEventListener(`keydown`, (event) => {
+    if (event.code == `Backspace` || event.key == `Backspace`) {
+        inputHistory.pop();
+        displayText = displayText.slice(0, -1); 
+        display.value = displayText;
+    }
+})
